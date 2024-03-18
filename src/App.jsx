@@ -34,11 +34,11 @@ const App = () => {
         </Col>
       </Row>
       <Row>
-      <Col md={9}>
+      <Col md={8} sm={10}>
             <Listado colaboradores={filteredColaboradores} />
           </Col>
 
-        <Col md={3} >
+        <Col md={4} sm={12} >
           <Formulario setAlert={setAlert} colaboradores={colaboradores} setColaboradores={setColaboradores} />
           {
             alert.message !== "" &&
@@ -46,7 +46,6 @@ const App = () => {
           }
 
         </Col>
-
       </Row>
     </Container>
   </>;

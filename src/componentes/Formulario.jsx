@@ -14,19 +14,19 @@ const Formulario = ({ colaboradores, setColaboradores, setAlert }) => {
 
     const cambioEnvioFormulario = (e) => {
         e.preventDefault();
-        const colaborador_id = {...nuevoColaborador, id: Date.now()}
+        const colaborador_id = { ...nuevoColaborador, id: Date.now() }
 
-        if(
-            colaborador_id.nombre.trim() == ''  ||
-            colaborador_id.correo.trim() == ''  ||
-            colaborador_id.edad.trim() == ''    ||
-            colaborador_id.cargo.trim() == ''   ||
+        if (
+            colaborador_id.nombre.trim() == '' ||
+            colaborador_id.correo.trim() == '' ||
+            colaborador_id.edad.trim() == '' ||
+            colaborador_id.cargo.trim() == '' ||
             colaborador_id.telefono.trim() == ''
-         ){
-            setAlert({message: "¡Completa todos los campos!", color: "danger"})
-        }else{
+        ) {
+            setAlert({ message: "¡Completa todos los campos!", color: "danger" })
+        } else {
             setColaboradores([...colaboradores, colaborador_id]);
-            setAlert({message: "¡Usuario agregado con éxito!", color: "success"})
+            setAlert({ message: "¡Usuario agregado con éxito!", color: "success" })
         }
 
     }
@@ -92,9 +92,13 @@ const Formulario = ({ colaboradores, setColaboradores, setAlert }) => {
                     />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Agregar colaborador
-                </Button>
+                <div className="d-grid gap-2 mb-3">
+                    <Button variant="primary" size="md" type="submit">
+                        Agregar colaborador
+                    </Button>
+                </div>
+
+                
             </Form>
         </>
     );
